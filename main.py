@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from ws_routes import study_ws, charts, messages
+from backend.routes import tts
 
 app = FastAPI()
 
@@ -19,3 +20,4 @@ app.include_router(study_ws.router)
 app.include_router(charts.router)
 
 app.include_router(messages.router)
+app.include_router(tts.router)
